@@ -1,0 +1,25 @@
+{
+    "presets": [
+        ["@babel/preset-env", {
+            "modules": false,
+            "targets": {
+                // "browsers": ["> 1%", "last 2 versions", "not ie < 11"],
+                "chrome": "58",
+                "ie": "11",
+                "safari": "tp"
+            },
+            "useBuiltIns": "usage"
+        }]
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime", ["@babel/plugin-proposal-pipeline-operator", {
+            "proposal": "minimal"
+        }],
+        "@babel/plugin-syntax-dynamic-import", ["@babel/plugin-proposal-decorators", {
+            "legacy": true
+        }],
+        ["@babel/plugin-proposal-class-properties", {
+            "loose": false
+        }]
+    ]
+}
