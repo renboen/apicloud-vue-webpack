@@ -83,7 +83,11 @@ const webpackDevConf = env => {
             proxy: {}
         },
         plugins: [
-            new webpack.HotModuleReplacementPlugin()
+            new webpack.HotModuleReplacementPlugin(),
+            new webpack.DefinePlugin({
+                DEBUG: JSON.stringify(true)
+            })
+
         ]
     })
 };

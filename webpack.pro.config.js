@@ -47,8 +47,12 @@ const webpackProConfig = merge(baseConf, {
         }]
     },
     plugins: [new MiniCssExtractPlugin({
-        filename: "css/[name].[contenthash].css",
-        chunkFilename: "[id].css"
-    })]
+            filename: "css/[name].[contenthash].css",
+            chunkFilename: "[id].css"
+        }),
+        new webpack.DefinePlugin({
+            DEBUG: JSON.stringify(false)
+        })
+    ]
 })
 module.exports = webpackProConfig;
